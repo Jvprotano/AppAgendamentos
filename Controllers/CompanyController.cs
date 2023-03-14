@@ -27,9 +27,9 @@ namespace AppAgendamentos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Company company)
+        public async Task<IActionResult> Create(Company company)
         {
-            _companyRepository.Save(company);
+            await _companyRepository.Save(company);
 
             return RedirectToAction("Index", "Home");
         }

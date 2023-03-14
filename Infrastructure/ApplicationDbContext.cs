@@ -11,9 +11,9 @@ namespace AppAgendamentos.Infrastructure
         {
         }
 
-        public DbSet<Company>? Companies { get; set; }
-        public DbSet<User>? Users { get; set; }
-        public DbSet<Scheduling>? Schedulings { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Scheduling> Schedulings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

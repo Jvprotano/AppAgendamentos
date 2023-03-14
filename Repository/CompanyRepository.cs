@@ -14,9 +14,17 @@ namespace AppAgendamentos.Repository
         }
         public async Task Save(Company company)
         {
-            await _context.Companies.AddAsync(company);
-            
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.Companies.AddAsync(company);
+
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }
